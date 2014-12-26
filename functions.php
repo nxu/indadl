@@ -1,7 +1,7 @@
 <?php
 	/* (c) 2014 nXu */
 	function error($msg) {
-		die("{'success': false, 'message': $msg;}");
+		die('{"success": false, "message": "' . $msg. '"}');
 	}
 
      /**

@@ -55,5 +55,9 @@
 	$page = $result['content'];
 	$page = json_decode($page);
 
+	if (!isset($page->data->video_file)) {
+		error("A videó linkje nem található");
+	}
+
 	die('{"success": true, "video_url": "' . $page->data->video_file . '" }');
 ?>
