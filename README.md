@@ -23,3 +23,7 @@ If successful:
   'video_url': 'http://video.url'
 }
 ```
+
+Site layout
+------
+I've also published the layout and JS of the original site found at https://nxu.hu/indavideo. The same license is applied to it, feel free to reuse.
