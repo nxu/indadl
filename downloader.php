@@ -25,7 +25,7 @@ $hash = array();
 // Check if hotlink mode (indadirect)
 if ($hotlink) {
     // It is, fix url
-    $url = sprintf("http://%s/%s", str_replace(".nxu", "", $_SERVER['HTTP_HOST']), $url);
+    $url = sprintf("http://%s%s", str_replace(".nxu", "", $_SERVER['HTTP_HOST']), $url);
 }
 
 // Add http if not already in the url
