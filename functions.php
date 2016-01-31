@@ -4,14 +4,20 @@
 /**
  * Exits after displaying an error message.
  *
- * @param $msg
+ * @param string  $msg
+ * @param bool  $hotlink
  */
-function error($msg)
+function error($msg, $hotlink = false)
 {
-    die(json_encode([
-        'success' => false,
-        'message' => $msg
-    ]));
+    if (!$hotlink) {
+        die(json_encode([
+            'success' => false,
+            'message' => $msg
+        ]));
+    } else {
+        header('Location:http://nxu.hu/indavideo/');
+        exit;
+    }
 }
 
 /**

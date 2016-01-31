@@ -1,5 +1,9 @@
 <?php
-/* (c) 2014-2015 nXu */
+/* (c) 2014-2016 nXu */
+
+// Check if hotlink mode
+$hotlink = !empty($_GET['hotlink']) && $_GET['hotlink'] == 'true';
+
 require_once('functions.php');
 
 define('INDA_AMFPHP', 'http://amfphp.indavideo.hu/SYm0json.php/player.playerHandler.getVideoData/');
@@ -8,8 +12,9 @@ define('INDA_AMFPHP', 'http://amfphp.indavideo.hu/SYm0json.php/player.playerHand
 header('Content-Type: application/json');
 
 // Check if param was given
-if (!isset($_GET['url']))
-    error("Nem adtál meg URL-t");
+if (!isset($_GET['url'])) {
+    error("Nem adtál meg URL-t", $hotlink);
+}
 
 // Assign param
 $url = $_GET['url'];
@@ -29,7 +34,7 @@ $normalPattern = "~^https?://([a-zA-Z]+\.)?indavideo\.hu/video/([a-zA-Z0-9_#\-]+
 if (preg_match("~^" . $embedPattern . "$~", $url, $hash)) {
     $isEmbed = true;
 } else if (!preg_match($normalPattern, $url)) {
-    error("Érvénytelen URL");
+    error("Érvénytelen URL", $hotlink);
 }
 
 // Get hash
@@ -54,7 +59,7 @@ if ($isEmbed) {
     // Page loaded, get the embed link
     preg_match("~" . $embedPattern . "~", $page, $hash);
     if (sizeof($hash) < 2) {
-        error("A videó hash nem található");
+        error("A videó hash nem található", $hotlink);
     }
 
     $hash = $hash[1];
@@ -69,7 +74,7 @@ $page = $result['content'];
 $page = json_decode($page);
 
 if (!isset($page->data->video_file)) {
-    error("A videó linkje nem található");
+    error("A videó linkje nem található", $hotlink);
 }
 
 die(json_encode([
