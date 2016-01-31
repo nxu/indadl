@@ -83,7 +83,12 @@ if (!isset($page->data->video_file)) {
     error("A videó linkje nem található", $hotlink);
 }
 
-die(json_encode([
-    'success' => true,
-    'video_url' => $page->data->video_file
-]));
+if ($hotlink) {
+    header('Location:' . $page->data->video_file);
+    exit;
+} else {
+    die(json_encode([
+        'success' => true,
+        'video_url' => $page->data->video_file
+    ]));
+}
