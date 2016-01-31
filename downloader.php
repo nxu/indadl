@@ -22,6 +22,12 @@ $url = $_GET['url'];
 $isEmbed = false;
 $hash = array();
 
+// Check if hotlink mode (indadirect)
+if ($hotlink) {
+    // It is, fix url
+    $url = sprintf("http://%s/%s", $_SERVER['HTTP_HOST'], $url);
+}
+
 // Add http if not already in the url
 if (!preg_match('~^https?://~', $url)) {
     $url = 'http://' . $url;

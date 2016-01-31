@@ -15,7 +15,7 @@ function error($msg, $hotlink = false)
             'message' => $msg
         ]));
     } else {
-        header('Location:http://nxu.hu/indavideo/');
+        header('Location:/');
         exit;
     }
 }
