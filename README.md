@@ -24,6 +24,10 @@ If successful:
 }
 ```
 
+License
+-------
+Licensed under GNU GPLv3
+
 Changelog
 ---------
 
