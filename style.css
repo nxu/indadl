@@ -57,7 +57,7 @@ a, a:active, a:hover, a:visited {
 }
 
 /* Textbox */
-input {
+.input {
     height: 40px;
     font-size: 16pt;
     width: 90%;
@@ -69,7 +69,7 @@ input {
     display: block;
 }
 
-input:focus {
+.input:focus {
     outline: 0;
     border-color: #e7746f;
 }
@@ -121,6 +121,11 @@ input:focus {
 #error {
     color: #e7746f;
     display: none;
+}
+
+.donate {
+    margin-top: 30px;
+    text-align: center;
 }
 
 /* Mobile */
