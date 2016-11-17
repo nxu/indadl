@@ -31,6 +31,9 @@ Licensed under GNU GPLv3
 Changelog
 ---------
 
+#### 2016-11-14
+- Add file token to the retrieved URL to avoid 403 errors
+
 #### 2016-01-31
 - Now automatically adds `http://` to the URL if not already set
 - Better pattern for validaint URLs (no more need to strip query strings)
