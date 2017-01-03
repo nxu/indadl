@@ -27,13 +27,12 @@ function error($msg, $hotlink = false)
  * @param string  $url
  * @return array
  */
-function get_web_page($url)
+function get_web_page($url, $requestOptions = [])
 {
     $user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1';
     $cookie = tempnam("/tmp", "CURLCOOKIE");
 
     $options = array(
-
         CURLOPT_CUSTOMREQUEST => "GET",        //set request type post or get
         CURLOPT_POST => false,        //set to GET
         CURLOPT_USERAGENT => $user_agent, //set user agent
@@ -51,6 +50,18 @@ function get_web_page($url)
 
     $ch = curl_init($url);
     curl_setopt_array($ch, $options);
+
+    if (!empty($requestOptions)) {
+        if (!empty($requestOptions['headers'])) {
+            foreach ($requestOptions['headers'] as $headerKey => $headerValue) {
+                curl_setopt($ch,
+                    CURLOPT_HTTPHEADER,
+                    ["$headerKey: $headerValue"]
+                );
+            }
+        }
+    }
+
     $content = curl_exec($ch);
     $err = curl_errno($ch);
     $errmsg = curl_error($ch);
@@ -60,6 +71,7 @@ function get_web_page($url)
     $header['errno'] = $err;
     $header['errmsg'] = $errmsg;
     $header['content'] = $content;
+
     return $header;
 }
 

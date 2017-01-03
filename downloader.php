@@ -71,10 +71,17 @@ if ($isEmbed) {
     $hash = $hash[1];
 }
 
+// Scrape embed URL
+$embedPage = get_web_page("http://embed.indavideo.hu/player/video/$hash");
+
 // Get video URL
-$result = get_web_page(INDA_AMFPHP . $hash);
-if ($result['http_code'] != 200)
+$result = get_web_page(INDA_AMFPHP . $hash, ['headers' => [
+    'Referer' => 'https://assets.indavideo.hu'
+]]);
+
+if ($result['http_code'] != 200) {
     error("Az amfphp nem elérhető");
+}
 
 $page = $result['content'];
 $page = json_decode($page);
