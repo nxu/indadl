@@ -7,7 +7,7 @@ date_default_timezone_set('Europe/Budapest');
 		<meta charset="utf-8">
 		<title>Indavideó letöltés</title>
 		<meta name="author" content="nXu - Zsolt Fekete">
-		<meta name="description" content="Ingyenes, egyszerű Indavideó letöltés">
+		<meta name="description" content="Ingyenes, egyszerű Indavideó letöltő, akár mobilon is. Videók letöltése egy kattintással mp4 formátumban.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Style -->
