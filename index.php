@@ -26,7 +26,11 @@
 				<p id="error"></p>
 				<button class="centerize" href="#" id="getvideo">Videó letöltése</button>
 			</div>
-			<p id="footer">&copy; 2014-2016 <a href="https://nxu.hu/">nXu</a></p>
+			<p id="footer">
+				&copy; 2014-<?=date('Y')?>
+				<a href="https://nxu.hu/">nXu</a> -
+				<a href="mailto:nxu@nxu.hu">nxu@nxu.hu</a>
+			</p>
 			<p id="disclaimer">Az oldal semmilyen kapcsolatban nem áll az <a href="http://www.indavideo.hu/" target="_blank">indavideo.hu</a>-val vagy az Inda-Labs Zrt-vel.</p>
 			</p>
 		</div>
