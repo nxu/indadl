@@ -46,4 +46,4 @@ Changelog
 
 Site layout
 -----------
-I've also published the layout and JS of the original site found at https://nxu.hu/indavideo. The same license is applied to it, feel free to reuse.
+I've also published the layout and JS of the original site found at https://indavideo.nxu.hu/. The same license is applied to it, feel free to reuse.
