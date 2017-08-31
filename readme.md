@@ -9,7 +9,7 @@ You can either visit https://indavideo.nxu.hu or use the provided API. Please be
 License
 -------
 Licensed under GNU GPLv3.
-
+ 
 Changelog
 ---------
 
