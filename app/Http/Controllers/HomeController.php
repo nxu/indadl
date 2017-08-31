@@ -25,7 +25,19 @@ class HomeController extends Controller
                 'url' => $indavideoClient->getVideoUrl($url)
             ]);
         } catch (\InvalidArgumentException $ex) {
-            return response($ex->getMessage(), 400);
+            return response()->json([
+                'error' => $ex->getMessage()
+            ], 400);
         }
+    }
+
+    public function apiDocs()
+    {
+        return view('api');
+    }
+
+    public function legacy()
+    {
+        return response('New API: https://indavideo.nxu.hu/api', 400);
     }
 }
