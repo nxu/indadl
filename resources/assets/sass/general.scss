@@ -1,0 +1,46 @@
+body {
+  background: $body-bg;
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  color: $text-color;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: .75rem;
+  color: lighten($text-color, 50%);
+
+  @media (min-height: 600px) {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  p {
+    margin-bottom: .75rem;
+
+    &.exclaimer {
+      font-size: .9em;
+    }
+  }
+}
+
+a {
+  color: $brand-primary;
+}
+
+.center {
+  text-align: center;
+}
+
+hr {
+  border: 1px solid $border-color;
+  border-top: none;
+  margin: 1.5rem 0;
+}
+
+video {
+  max-width: 100%;
+}
