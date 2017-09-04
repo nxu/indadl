@@ -49,6 +49,7 @@ class IndavideoClient
         $videoData = json_decode($apiResponse);
 
         if (empty($videoData->data->video_file)) {
+            logger()->debug('Indavideo API response: ' . $apiResponse);
             throw new \InvalidArgumentException('Video URL could not be retrieved from Indavideo API.');
         }
 
