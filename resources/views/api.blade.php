@@ -9,6 +9,7 @@
     <div class="content">
         <h4>Request</h4>
         <pre><strong>POST</strong> https://indavideo.nxu.hu/url
+
 {
     "url": "http://indavideo.hu/video/my_video_url"
 }
