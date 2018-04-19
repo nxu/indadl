@@ -1,0 +1,30 @@
+.button {
+  display: inline-block;
+  padding: .75rem 1rem;
+  text-align: center;
+  color: white;
+  background: $brand-primary;
+  text-decoration: none;
+  outline: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($brand-primary, 15%);
+  }
+
+  &.donate {
+    background: $brand-donate;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: darken($brand-donate, 15%);
+    }
+  }
+
+  &.large {
+    font-size: 1.4rem;
+    padding: 1rem 1.25rem;
+  }
+}

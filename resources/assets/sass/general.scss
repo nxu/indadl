@@ -1,0 +1,62 @@
+body {
+  background: $body-bg;
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  color: $text-color;
+  height: auto;
+  min-height: 100%;
+}
+
+footer {
+  margin-top: 120px;
+  text-align: center;
+  font-size: .75rem;
+  color: lighten($text-color, 50%);
+  padding: 0 15px;
+
+  @media (max-width: 780px) {
+    margin-top: 30px;
+    margin-top: 30px;
+  }
+
+
+  .api {
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: .75rem;
+
+    &.exclaimer {
+      font-size: .9em;
+    }
+  }
+}
+
+a {
+  color: $brand-primary;
+}
+
+.center {
+  text-align: center;
+}
+
+hr {
+  border: 1px solid $border-color;
+  border-top: none;
+  margin: 1.5rem 0;
+}
+
+video {
+  max-width: 100%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.github-ribbon {
+  @media (max-width: 780px) {
+    display: none;
+  }
+}

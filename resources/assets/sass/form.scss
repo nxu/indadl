@@ -1,0 +1,43 @@
+.form-input {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid $border-color;
+  padding: .75rem;
+}
+
+.input-with-button {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 780px) {
+    display: block;
+
+    .form-input {
+      width: 100%;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  .form-input {
+    flex: 1 1 100%;
+    height: 41px;
+  }
+
+  .button {
+    height: 41px;
+    text-transform: uppercase;
+  }
+}
+
+.error {
+  text-align: center;
+  color: #cc0000;
+  margin-top: 15px;
+}
