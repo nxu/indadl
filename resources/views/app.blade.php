@@ -43,6 +43,8 @@
             </div>
 
             <div class="content center" v-else>
+                <a href="#" class="reset-button" @click="reset()">Másik videót töltök le</a>
+
                 <div>
                     <tabs>
                         <tab v-for="(file, resolution) in files"
