@@ -19,7 +19,12 @@
 <pre><strong>200 OK</strong>
 
 {
-    "url": "http://url.com/video.mp4?params"
+    "url": "http://url.com/video.mp4?params",
+    "resolutions": {
+        360: "http://url.com/video.mp4?params",
+        720: "http://url.com/video.mp4?params",
+        1080: null
+    }
 }</pre>
 
         <p>vagy</p>

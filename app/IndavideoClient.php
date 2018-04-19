@@ -46,17 +46,10 @@ class IndavideoClient
             ]
         ], true);
 
-        $videoData = json_decode($apiResponse);
+        $videoData = json_decode($apiResponse, true);
 
-        if (empty($videoData->data->video_file)) {
-            logger()->debug('Indavideo API response: ' . $apiResponse);
-            throw new \InvalidArgumentException('Video URL could not be retrieved from Indavideo API.');
-        }
-
-        $token = (array) $videoData->data->filesh;
-        $token = array_shift($token);
-
-        return "{$videoData->data->video_file}&token=$token";
+        $parser = new AmfResponseParser();
+        return $parser->parseVideoData($videoData);
     }
 
     protected function appendHttpIfNecessary($url)

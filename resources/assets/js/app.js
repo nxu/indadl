@@ -1,3 +1,4 @@
+import Tabs from 'vue-tabs-component'
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -8,6 +9,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+Vue.use(Tabs);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -19,7 +21,7 @@ const app = new Vue({
     el: '#app',
     data: {
         sourceUrl: '',
-        resultUrl: '',
+        files: {},
         error: '',
         loading: false
     },
@@ -36,7 +38,7 @@ const app = new Vue({
             axios.post('/url', {url: this.sourceUrl})
                 .then((response) => {
                     this.sourceUrl = '';
-                    this.resultUrl = response.data.url;
+                    this.files = response.data.resolutions;
                 })
                 .catch(() => {
                     this.error = 'Kérlek, adj meg egy működő Indavideó URL-t'
@@ -48,8 +50,9 @@ const app = new Vue({
         },
         reset() {
             this.sourceUrl = '';
-            this.resultUrl = '';
+            this.files = {};
             this.error = '';
         }
     }
 });
+

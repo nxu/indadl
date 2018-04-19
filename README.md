@@ -12,6 +12,9 @@ Licensed under GNU GPLv3.
  
 Changelog
 ---------
+#### 2018-04-19
+- Add support for multiple resolutions
+- Refactor Indavideo response parsing and output formatting
 
 #### 2017-08-31
 - Complete rewrite in Laravel. Very new design and backend code.

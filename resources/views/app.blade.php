@@ -20,7 +20,7 @@
                 <h1>Indavideó letöltés</h1>
             </header>
 
-            <div class="content" v-if="resultUrl.length == 0">
+            <div class="content" v-if="! ('360' in files)">
                 <div class="input-with-button">
                     <input type="text"
                            autofocus
@@ -43,11 +43,21 @@
             </div>
 
             <div class="content center" v-else>
-                <a :href="resultUrl" class="button large">Letöltés</a>
+                <div>
+                    <tabs>
+                        <tab v-for="(file, resolution) in files"
+                             v-if="file != null"
+                             :name="resolution + 'p'"
+                             :key="'restab' + resolution"
+                        >
+                            <a :href="file" class="button large">Letöltés</a>
 
-                <hr>
+                            <hr>
 
-                <video :src="resultUrl" controls></video>
+                            <video :src="file" controls></video>
+                        </tab>
+                    </tabs>
+                </div>
             </div>
         </section>
         @show

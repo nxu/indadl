@@ -21,9 +21,7 @@ class HomeController extends Controller
         $url = $request->get('url');
 
         try {
-            return response()->json([
-                'url' => $indavideoClient->getVideoUrl($url)
-            ]);
+            return response()->json($indavideoClient->getVideoUrl($url));
         } catch (\InvalidArgumentException $ex) {
             return response()->json([
                 'error' => $ex->getMessage()
