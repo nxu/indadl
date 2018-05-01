@@ -12,6 +12,9 @@ Licensed under GNU GPLv3.
  
 Changelog
 ---------
+#### 2018-05-01
+- Add download attribute to the download button
+
 #### 2018-04-19
 - Add support for multiple resolutions
 - Refactor Indavideo response parsing and output formatting

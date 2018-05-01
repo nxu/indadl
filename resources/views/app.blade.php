@@ -52,7 +52,7 @@
                              :name="resolution + 'p'"
                              :key="'restab' + resolution"
                         >
-                            <a :href="file" class="button large">Letöltés</a>
+                            <a :href="file" class="button large" download>Letöltés</a>
 
                             <hr>
 
