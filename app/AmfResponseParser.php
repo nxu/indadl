@@ -8,10 +8,10 @@ class AmfResponseParser
 {
     public function parseVideoData(array $response)
     {
-        $availableFiles = array_get($response, 'data.video_files', []);
+        $availableFile = array_get($response, 'data.video_file');
         $hashes = array_get($response, 'data.filesh', []);
-        $urls = [];
-        $index = 0;
+        $files = array_get($response, 'data.flv_files', []);
+        $urls = ['360' => $availableFile . "&token=$hashes[360]"];
 
         $resolutions = $this->getAvailableResolutions($response);
 
@@ -19,9 +19,10 @@ class AmfResponseParser
             return $this->getFallback($response);
         }
 
-        foreach ($resolutions as $resolution) {
-            $token = array_get($hashes, $resolution);
-            $urls[$resolution] = array_get($availableFiles, $index++) . "&token=$token";
+        $hashes_keys = array_keys($hashes);
+        for ($index = 0; $index < count($files) - 1; $index++) {
+            $token = array_get($hashes, $hashes_keys[$index + 1]);
+            $urls[$resolutions[$index]] = str_replace($files[0], $files[$index + 1], $availableFile). "&token=$token";
         }
 
         return new VideoData($urls);
@@ -29,19 +30,19 @@ class AmfResponseParser
 
     protected function getAvailableResolutions($response)
     {
-        $resolutions = ['360'];
-        $files = array_get($response, "data.video_files");
+        $resolutions = [];
+        $files = array_get($response, "data.flv_files");
 
         if (! $files) {
             return null;
         }
 
         foreach ($files as $file) {
-            if (mb_strpos($file, '.720.mp4?') !== false) {
+            if (mb_strpos($file, '.720.mp4') !== false) {
                 $resolutions[] = '720';
             }
 
-            if (mb_strpos($file, '.1080.mp4?') !== false) {
+            if (mb_strpos($file, '.1080.mp4') !== false) {
                 $resolutions[] = '1080';
             }
         }
