@@ -38,7 +38,12 @@ class AmfResponseParser
         }
 
         foreach ($files as $file) {
-            if (mb_strpos($file, '.720.mp4') !== false) {
+
+if (mb_strpos($file, '.360.mp4') !== false) {
+                $resolutions[] = '360';
+            }
+
+           if (mb_strpos($file, '.720.mp4') !== false) {
                 $resolutions[] = '720';
             }
 
