@@ -32,7 +32,8 @@ class AmfResponseParser
     protected function getAvailableRawUrls($response)
     {
         $resolutions = [];
-        $files = array_get($response, "data.video_files");
+        $originalUrl = array_get($response, 'data.video_file');
+        $files = array_get($response, 'data.flv_files');
 
         if (! $files) {
             return null;
@@ -40,15 +41,15 @@ class AmfResponseParser
 
         foreach ($files as $file) {
             if (mb_strpos($file, '.360.mp4') !== false) {
-                $resolutions['360'] = $file;
+                $resolutions['360'] = str_replace($files[0], $file, $originalUrl);
             }
 
            if (mb_strpos($file, '.720.mp4') !== false) {
-               $resolutions['720'] = $file;
+               $resolutions['720'] = str_replace($files[0], $file, $originalUrl);
             }
 
             if (mb_strpos($file, '.1080.mp4') !== false) {
-                $resolutions['1080'] = $file;
+                $resolutions['1080'] = str_replace($files[0], $file, $originalUrl);
             }
         }
 
