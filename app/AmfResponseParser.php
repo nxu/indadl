@@ -8,47 +8,47 @@ class AmfResponseParser
 {
     public function parseVideoData(array $response)
     {
-        $availableFile = array_get($response, 'data.video_file');
-        $hashes = array_get($response, 'data.filesh', []);
-        $files = array_get($response, 'data.flv_files', []);
-        $urls = ['360' => $availableFile . "&token=$hashes[360]"];
+        $tokens = array_get($response, 'data.filesh', []);
 
-        $resolutions = $this->getAvailableResolutions($response);
+        $rawUrls = $this->getAvailableRawUrls($response);
 
-        if (! $resolutions) {
+        if (empty($rawUrls)) {
             return $this->getFallback($response);
         }
 
-        $hashes_keys = array_keys($hashes);
-        for ($index = 0; $index < count($files) - 1; $index++) {
-            $token = array_get($hashes, $hashes_keys[$index + 1]);
-            $urls[$resolutions[$index]] = str_replace($files[0], $files[$index + 1], $availableFile). "&token=$token";
-        }
+        $urls = collect($rawUrls)->map(function ($url, $resolution) use ($tokens) {
+            $token = array_get($tokens, $resolution);
 
-        return new VideoData($urls);
+            if (str_contains($url, '?')) {
+                return "$url&token=$token";
+            }
+
+            return "$url?token=$token";
+        });
+
+        return new VideoData($urls->toArray());
     }
 
-    protected function getAvailableResolutions($response)
+    protected function getAvailableRawUrls($response)
     {
         $resolutions = [];
-        $files = array_get($response, "data.flv_files");
+        $files = array_get($response, "data.video_files");
 
         if (! $files) {
             return null;
         }
 
         foreach ($files as $file) {
-
-if (mb_strpos($file, '.360.mp4') !== false) {
-                $resolutions[] = '360';
+            if (mb_strpos($file, '.360.mp4') !== false) {
+                $resolutions['360'] = $file;
             }
 
            if (mb_strpos($file, '.720.mp4') !== false) {
-                $resolutions[] = '720';
+               $resolutions['720'] = $file;
             }
 
             if (mb_strpos($file, '.1080.mp4') !== false) {
-                $resolutions[] = '1080';
+                $resolutions['1080'] = $file;
             }
         }
 
