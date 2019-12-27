@@ -14,6 +14,7 @@ Changelog
 ---------
 #### 2019-12-27
 - Use 360p token for all resolutions (tip from bleachhun)
+- Add uptime status page link
 
 #### 2019-12-22
 - Merge 360p bugfix, courtesy of bleachhun
