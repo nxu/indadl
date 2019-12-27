@@ -12,6 +12,16 @@ Licensed under GNU GPLv3.
  
 Changelog
 ---------
+#### 2019-12-27
+- Use 360p token for all resolutions (tip from bleachhun)
+
+#### 2019-12-22
+- Merge 360p bugfix, courtesy of bleachhun
+- Minor refactor
+
+#### 2019-10-16
+- Merge HD video fix, courtesy of golddragon007
+
 #### 2018-05-01
 - Add download attribute to the download button
 
