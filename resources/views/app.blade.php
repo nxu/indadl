@@ -68,6 +68,8 @@
     <footer>
         <p class="api">
             <a href="/api">API</a>
+            <span>&nbsp;&middot;&nbsp;</span>
+            <a href="https://stats.uptimerobot.com/nYB1qC7YwQ/784058498" target="_blank">Status</a>
         </p>
         <p class="copyright">
             &copy; 2014-{{ date('Y') }} <a href="https://nxu.hu" target="_blank">nxu</a>
