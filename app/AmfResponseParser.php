@@ -8,7 +8,7 @@ class AmfResponseParser
 {
     public function parseVideoData(array $response)
     {
-        $tokens = array_get($response, 'data.filesh', []);
+        $token = array_first(array_get($response, 'data.filesh', []));
 
         $rawUrls = $this->getAvailableRawUrls($response);
 
@@ -16,9 +16,7 @@ class AmfResponseParser
             return $this->getFallback($response);
         }
 
-        $urls = collect($rawUrls)->map(function ($url, $resolution) use ($tokens) {
-            $token = array_get($tokens, $resolution);
-
+        $urls = collect($rawUrls)->map(function ($url, $resolution) use ($token) {
             if (str_contains($url, '?')) {
                 return "$url&token=$token";
             }
