@@ -42,9 +42,9 @@ class IndavideoClient
         $apiResponse = $this->getPageContent(static::INDAVIDEO_API_ENDPOINT . $videoHash, [
             'headers' => [
                 'Referer' => 'https://assets.indavideo.hu',
-                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36',
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36',
             ]
-        ], true);
+        ]);
 
         $videoData = json_decode($apiResponse, true);
 

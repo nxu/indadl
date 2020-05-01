@@ -2,13 +2,14 @@
 
 namespace App;
 
+use Illuminate\Support\Arr;
 use InvalidArgumentException;
 
 class AmfResponseParser
 {
     public function parseVideoData(array $response)
     {
-        $token = array_first(array_get($response, 'data.filesh', []));
+        $tokens = Arr::get($response, 'data.filesh', []);
 
         $rawUrls = $this->getAvailableRawUrls($response);
 
@@ -16,7 +17,9 @@ class AmfResponseParser
             return $this->getFallback($response);
         }
 
-        $urls = collect($rawUrls)->map(function ($url, $resolution) use ($token) {
+        $urls = collect($rawUrls)->map(function ($url, $resolution) use ($tokens) {
+            $token = Arr::get($tokens, $resolution);
+
             if (str_contains($url, '?')) {
                 return "$url&token=$token";
             }
@@ -30,8 +33,14 @@ class AmfResponseParser
     protected function getAvailableRawUrls($response)
     {
         $resolutions = [];
-        $originalUrl = array_get($response, 'data.video_file');
-        $files = array_get($response, 'data.flv_files');
+
+        // Old format, keep for backwards compatibility
+        $files = Arr::get($response, 'data.flv_files');
+
+        if (empty($files)) {
+            // New format
+            $files = Arr::get($response, 'data.video_files');
+        }
 
         if (! $files) {
             return null;
@@ -39,15 +48,15 @@ class AmfResponseParser
 
         foreach ($files as $file) {
             if (mb_strpos($file, '.360.mp4') !== false) {
-                $resolutions['360'] = str_replace($files[0], $file, $originalUrl);
+                $resolutions['360'] = $file;
             }
 
            if (mb_strpos($file, '.720.mp4') !== false) {
-               $resolutions['720'] = str_replace($files[0], $file, $originalUrl);
+               $resolutions['720'] = $file;
             }
 
             if (mb_strpos($file, '.1080.mp4') !== false) {
-                $resolutions['1080'] = str_replace($files[0], $file, $originalUrl);
+                $resolutions['1080'] = $file;
             }
         }
 
