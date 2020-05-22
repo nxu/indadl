@@ -12,6 +12,9 @@ Licensed under GNU GPLv3.
  
 Changelog
 ---------
+#### 2020-05-22
+- Update Indavideo API parser (fix non-working URLs)
+
 #### 2020-05-01
 - Update Indavideo API parser (fix non-working URLs)
 - Bump faked user agent version
