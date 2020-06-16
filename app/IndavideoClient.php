@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 class IndavideoClient
 {
-    const INDAVIDEO_API_ENDPOINT = 'http://amfphp.indavideo.hu/SYm0json.php/player.playerHandler.getVideoData/';
+    const INDAVIDEO_API_ENDPOINT = 'https://amfphp.indavideo.hu/SYm0json.php/player.playerHandler.getVideoData/';
 
     // Url will be used later, no need for pattern markers
     const EMBED_URL_PATTERN = '~https?://embed\.indavideo\.hu/player/video/([0-9a-f]+)(\?.*)?~';
@@ -39,12 +39,12 @@ class IndavideoClient
             }
         }
 
-        $apiResponse = $this->getPageContent(static::INDAVIDEO_API_ENDPOINT . $videoHash, [
+        $apiResponse = $this->getPageContent(static::INDAVIDEO_API_ENDPOINT . $videoHash . '/12////?directlink', [
             'headers' => [
                 'Referer' => 'https://assets.indavideo.hu',
-                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36',
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36',
             ]
-        ], true);
+        ]);
 
         $videoData = json_decode($apiResponse, true);
 
