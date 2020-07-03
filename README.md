@@ -12,6 +12,9 @@ Licensed under GNU GPLv3.
  
 Changelog
 ---------
+#### 2020-07-03
+- Update Indavideo API parser, use correct referer
+
 #### 2020-05-22
 - Update Indavideo API parser (fix non-working URLs)
 

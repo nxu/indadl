@@ -41,8 +41,8 @@ class IndavideoClient
 
         $apiResponse = $this->getPageContent(static::INDAVIDEO_API_ENDPOINT . $videoHash . '/12////?directlink', [
             'headers' => [
-                'Referer' => 'https://assets.indavideo.hu',
-                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36',
+                'Referer' => "https://embed.indavideo.hu/player/video/$videoHash?autostart=1&hide=data",
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
             ]
         ]);
 
