@@ -1,0 +1,17 @@
+.rip {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: -30px;
+  font-size: 2.5rem;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+
+  .large {
+    font-size: 3rem;
+  }
+}
