@@ -11,7 +11,7 @@ class IndavideoClient
     // Url will be used later, no need for pattern markers
     const EMBED_URL_PATTERN = '~https?://embed\.indavideo\.hu/player/video/([0-9a-f]+)(\?.*)?~';
 
-    const NORMAL_URL_PATTERN = '~^https?://([a-zA-Z]+\.)?indavideo\.hu/video/([a-zA-Z0-9_#\-]+)(\?.*)?$~i';
+    const NORMAL_URL_PATTERN = '~^https?://([a-zA-Z]+\.)?indavideo\.hu/video/([a-zA-Z0-9_#\-=]+)(\?.*)?$~i';
 
     protected $client;
 
@@ -27,6 +27,8 @@ class IndavideoClient
         // Try to use URL as embed video URL directly
         $videoHash = $this->getVideoHashFromString($url);
 
+        $isEmbed = ! empty($videoHash);
+
         if (! $videoHash) {
             if (! $this->isNormalUrl($url)) {
                 throw new \InvalidArgumentException('Invalid Indavideo URL provided');
@@ -39,7 +41,9 @@ class IndavideoClient
             }
         }
 
-        $apiResponse = $this->getPageContent(static::INDAVIDEO_API_ENDPOINT . $videoHash . '/12////?directlink', [
+        $url = $isEmbed ? 'directlink' : urlencode($url);
+
+        $apiResponse = $this->getPageContent(static::INDAVIDEO_API_ENDPOINT . $videoHash . "/12////?$url", [
             'headers' => [
                 'Referer' => "https://embed.indavideo.hu/player/video/$videoHash?autostart=1&hide=data",
                 'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',

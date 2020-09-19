@@ -34,12 +34,11 @@ class AmfResponseParser
     {
         $resolutions = [];
 
-        // Old format, keep for backwards compatibility
-        $files = Arr::get($response, 'data.flv_files');
+        $files = Arr::get($response, 'data.video_files');
 
         if (empty($files)) {
-            // New format
-            $files = Arr::get($response, 'data.video_files');
+            // Backwards compatibility
+            $files = Arr::get($response, 'data.flv_files');
         }
 
         if (! $files) {
