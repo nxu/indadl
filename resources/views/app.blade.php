@@ -88,6 +88,12 @@
         <p class="exclaimer">
             Az oldal semmilyen kapcsolatban nem áll az indavideo.hu-val vagy az Inda-Labs Zrt-vel.
         </p>
+
+        <p>
+            <a href="https://www.paypal.me/nabunub" target="_blank" class="button donate">
+                <i class="fa fa-fw fa-paypal"></i> DONATE
+            </a>
+        </p>
     </footer>
 </div>
 
