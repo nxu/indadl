@@ -12,6 +12,9 @@ Licensed under GNU GPLv3.
  
 Changelog
 ---------
+#### 2020-09-19
+- Update Indavideo API parser, send correct URL to the AMFPHP server
+
 #### 2020-07-03
 - Update Indavideo API parser, use correct referer
 
