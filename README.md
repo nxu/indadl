@@ -1,3 +1,6 @@
+[![Actions Status](https://github.com/nXu/indadl/workflows/URL%20Download%20tests/badge.svg)](https://github.com/nXu/indadl/actions)
+
+
 indadl
 ======
 Indavideo downloader, the second attempt.
