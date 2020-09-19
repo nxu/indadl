@@ -1,4 +1,4 @@
-name: Laravel
+name: 'URL Download tests'
 
 on:
   push:
