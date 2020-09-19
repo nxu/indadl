@@ -14,14 +14,6 @@
 
 <div id="app">
     <main>
-        <a href="https://index.hu/szolgalati-kozlemeny/2020/07/24/index_lapvezetes_tavozas_dull_szabolcs_munk_veronika_toth_szenesi_attila_haasz_janos_bodolai_laszlo/"
-           target="_blank"
-           class="rip"
-        >
-            RIP Index.
-            <br>
-            <span class="large">Nincs másik.</span>
-        </a>
         @section('content')
         <section class="panel">
             <header>
