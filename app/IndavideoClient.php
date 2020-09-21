@@ -3,6 +3,7 @@
 namespace App;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
 
 class IndavideoClient
 {
@@ -34,7 +35,11 @@ class IndavideoClient
                 throw new \InvalidArgumentException('Invalid Indavideo URL provided');
             }
 
-            $pageContent = $this->getPageContent($url);
+            try {
+                $pageContent = $this->getPageContent($url);
+            } catch (BadResponseException $exception) {
+                throw new \InvalidArgumentException('Embed video URL not found.');
+            }
 
             if (! $videoHash = $this->getVideoHashFromString($pageContent)) {
                 throw new \InvalidArgumentException('Embed video URL not found.');
