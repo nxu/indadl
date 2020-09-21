@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Indavideó letöltés</title>
     <meta name="description" content="Ingyenes, egyszerű Indavideó letöltő, akár mobilon is. Videók letöltése egy kattintással mp4 formátumban.">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="preload"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -15,6 +14,11 @@
           onload="this.onload=null;this.rel='stylesheet'"
           integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
           crossorigin="anonymous"
+    >
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"
     >
 </head>
 <body>
