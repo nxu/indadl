@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Indavideó letöltés</title>
     <meta name="description" content="Ingyenes, egyszerű Indavideó letöltő, akár mobilon is. Videók letöltése egy kattintással mp4 formátumban.">
@@ -35,6 +35,7 @@
                            placeholder="Indavideó videó URL"
                            v-on:keyup.enter="getSource"
                            v-on:keyup="resetError"
+                           aria-label="Indavideo URL"
                     >
 
                     <div class="button-container">
@@ -77,18 +78,18 @@
             <span>&nbsp;&middot;&nbsp;</span>
             <a href="https://stats.uptimerobot.com/nYB1qC7YwQ/784058498" target="_blank" rel="noopener">Status</a>
         </p>
-        <p class="copyright">
-            &copy; 2014-{{ date('Y') }} <a href="https://nxu.hu" target="_blank" rel="noopener">nxu</a>
+        <p class="copyright" aria-hidden="true">
+            &copy; 2014-{{ date('Y') }} <a href="https://nxu.hu" target="_blank" rel="noopener" tabindex="-1">nxu</a>
             &middot;
-            <a href="mailto:nxu@nxu.hu">nxu@nxu.hu</a>
+            <a href="mailto:nxu@nxu.hu" tabindex="-1">nxu@nxu.hu</a>
         </p>
 
-        <p class="exclaimer">
+        <p class="exclaimer" aria-hidden="true">
             Az oldal semmilyen kapcsolatban nem áll az indavideo.hu-val vagy az Inda-Labs Zrt-vel.
         </p>
 
-        <p>
-            <a href="https://www.paypal.me/nabunub" target="_blank" class="button donate" rel="noreferrer">
+        <p aria-hidden="true">
+            <a href="https://www.paypal.me/nabunub" target="_blank" class="button donate" rel="noreferrer" tabindex="-m-1">
                 <i class="fa fa-fw fa-paypal"></i> DONATE
             </a>
         </p>
