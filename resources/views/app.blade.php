@@ -78,18 +78,18 @@
             <span>&nbsp;&middot;&nbsp;</span>
             <a href="https://stats.uptimerobot.com/nYB1qC7YwQ/784058498" target="_blank" rel="noopener">Status</a>
         </p>
-        <p class="copyright" aria-hidden="true">
-            &copy; 2014-{{ date('Y') }} <a href="https://nxu.hu" target="_blank" rel="noopener" tabindex="-1">nxu</a>
+        <p class="copyright">
+            &copy; 2014-{{ date('Y') }} <a href="https://nxu.hu" target="_blank" rel="noopener">nxu</a>
             &middot;
-            <a href="mailto:nxu@nxu.hu" tabindex="-1">nxu@nxu.hu</a>
+            <a href="mailto:nxu@nxu.hu">nxu@nxu.hu</a>
         </p>
 
-        <p class="exclaimer" aria-hidden="true">
+        <p class="exclaimer">
             Az oldal semmilyen kapcsolatban nem áll az indavideo.hu-val vagy az Inda-Labs Zrt-vel.
         </p>
 
-        <p aria-hidden="true">
-            <a href="https://www.paypal.me/nabunub" target="_blank" class="button donate" rel="noreferrer" tabindex="-m-1">
+        <p>
+            <a href="https://www.paypal.me/nabunub" target="_blank" class="button donate" rel="noreferrer">
                 <i class="fa fa-fw fa-paypal"></i> DONATE
             </a>
         </p>
