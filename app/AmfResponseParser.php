@@ -64,13 +64,13 @@ class AmfResponseParser
 
     protected function getFallback($response)
     {
-        $file = array_get($response, 'data.video_file');
+        $file = Arr::get($response, 'data.video_file');
 
         if (! $file) {
             throw new InvalidArgumentException('Video URL could not be retrieved from Indavideo API.');
         }
 
-        $token = (array) array_get($response, 'data.filesh', []);
+        $token = (array) Arr::get($response, 'data.filesh', []);
         $token = array_shift($token);
 
         if (! $token) {

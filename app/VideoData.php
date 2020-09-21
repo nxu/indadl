@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Arr;
 use JsonSerializable;
 
 class VideoData implements JsonSerializable
@@ -12,9 +13,9 @@ class VideoData implements JsonSerializable
 
     public function __construct($files)
     {
-        $this->sd = array_get($files, '360');
-        $this->hd = array_get($files, '720');
-        $this->uhd = array_get($files, '1080');
+        $this->sd = Arr::get($files, '360');
+        $this->hd = Arr::get($files, '720');
+        $this->uhd = Arr::get($files, '1080');
     }
 
     public function getSd()
