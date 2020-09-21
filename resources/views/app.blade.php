@@ -75,10 +75,10 @@
         <p class="api">
             <a href="/api">API</a>
             <span>&nbsp;&middot;&nbsp;</span>
-            <a href="https://stats.uptimerobot.com/nYB1qC7YwQ/784058498" target="_blank">Status</a>
+            <a href="https://stats.uptimerobot.com/nYB1qC7YwQ/784058498" target="_blank" rel="noopener">Status</a>
         </p>
         <p class="copyright">
-            &copy; 2014-{{ date('Y') }} <a href="https://nxu.hu" target="_blank">nxu</a>
+            &copy; 2014-{{ date('Y') }} <a href="https://nxu.hu" target="_blank" rel="noopener">nxu</a>
             &middot;
             <a href="mailto:nxu@nxu.hu">nxu@nxu.hu</a>
         </p>
@@ -88,14 +88,14 @@
         </p>
 
         <p>
-            <a href="https://www.paypal.me/nabunub" target="_blank" class="button donate">
+            <a href="https://www.paypal.me/nabunub" target="_blank" class="button donate" rel="noreferrer">
                 <i class="fa fa-fw fa-paypal"></i> DONATE
             </a>
         </p>
     </footer>
 </div>
 
-<a href="https://github.com/nXu/indadl" target="_blank" class="github-ribbon"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<a href="https://github.com/nXu/indadl" target="_blank" class="github-ribbon" rel="noopener"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
 <script src="{{ mix('/js/app.js') }}"></script>
 <script>!function(e,t,r,a,n,c,l,o){function h(e,t,r,a){for(r='',a='0x'+e.substr(t,2)|0,t+=2;t<e.length;t+=2)r+=String.fromCharCode('0x'+e.substr(t,2)^a); return r}try{for(n=e.getElementsByTagName('a'),l='/cdn-cgi/l/email-protection#',o=l.length,a=0;a<n.length;a++)try{c=n[a],t=c.href.indexOf(l),t>-1&&(c.href='mailto:'+h(c.href,t+o))}catch(f){}for(n=Array.prototype.slice.apply(e.getElementsByClassName('__cf_email__')),a=0;a<n.length;a++)try{c=n[a],c.parentNode.replaceChild(e.createTextNode(h(c.getAttribute('data-cfemail'),0)),c)}catch(f){}}catch(f){}}(document)</script><script>
