@@ -38,7 +38,7 @@ class IndavideoClient
             try {
                 $pageContent = $this->getPageContent($url);
             } catch (BadResponseException $exception) {
-                throw new \InvalidArgumentException('Embed video URL not found.');
+                throw new \InvalidArgumentException('Could not fetch ' . $url);
             }
 
             if (! $videoHash = $this->getVideoHashFromString($pageContent)) {
