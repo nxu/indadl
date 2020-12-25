@@ -36,7 +36,11 @@ class IndavideoClient
             }
 
             try {
-                $pageContent = $this->getPageContent($url);
+                $pageContent = $this->getPageContent($url, [
+                    'headers' => [
+                        'X-Forwarded-For' => '176.63.25.156',
+                    ]
+                ]);
             } catch (BadResponseException $exception) {
                 throw new \InvalidArgumentException('Could not fetch ' . $url);
             }
@@ -50,6 +54,7 @@ class IndavideoClient
 
         $apiResponse = $this->getPageContent(static::INDAVIDEO_API_ENDPOINT . $videoHash . "/12////?$url", [
             'headers' => [
+                'X-Forwarded-For' => '176.63.25.156',
                 'Referer' => "https://embed.indavideo.hu/player/video/$videoHash?autostart=1&hide=data",
                 'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
             ]
