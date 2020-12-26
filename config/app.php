@@ -16,6 +16,8 @@ return [
 
     'ga_key' => env('GA_KEY', 'UA-89348653-1'),
 
+    'proxy' => env('INDA_PROXY'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
