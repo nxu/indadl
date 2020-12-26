@@ -56,7 +56,7 @@ class IndavideoClient
             'headers' => [
                 'X-Forwarded-For' => '176.63.25.156',
                 'Referer' => "https://embed.indavideo.hu/player/video/$videoHash?autostart=1&hide=data",
-                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
             ],
             'proxy' => config('app.proxy'),
         ]);
