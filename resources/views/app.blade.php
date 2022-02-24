@@ -32,7 +32,7 @@
                            v-model="sourceUrl"
                            placeholder="Indavideó videó URL"
                            v-on:keyup.enter="getSource"
-                           v-on:keyup="resetError"
+                           v-on:change="resetError"
                            aria-label="Indavideo URL"
                     >
 
