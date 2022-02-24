@@ -12,7 +12,17 @@ class Logger
 {
     public function log(Request $request, Response $response)
     {
-        $apiRequest = new ApiRequest(time(), $request->getClientIp(), $response->getStatusCode());
+        $statusCode = $response->getStatusCode();
+
+        if (mb_substr($statusCode, 0, 1) == '2') {
+            $statusCode = 200;
+        } elseif (mb_substr($statusCode, 0, 1) == '4') {
+            $statusCode = 400;
+        } elseif (mb_substr($statusCode, 0, 1) == '5') {
+            $statusCode = 500;
+        }
+
+        $apiRequest = new ApiRequest(time(), $request->getClientIp(), $statusCode);
         $apiRequest = json_encode($apiRequest);
 
         Redis::lpush('api-log', $apiRequest);

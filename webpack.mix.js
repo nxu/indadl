@@ -12,7 +12,13 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .postCss("resources/assets/css/stats.css", "public/css", [
+        require("tailwindcss"),
+    ])
+    .vue();
+
+mix.disableSuccessNotifications();
 
 if (mix.inProduction()) {
     mix.version();
