@@ -18,6 +18,8 @@ return [
 
     'proxy' => env('INDA_PROXY'),
 
+    'log_api_requests' => env('LOG_API_REQUESTS', false),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
