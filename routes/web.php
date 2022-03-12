@@ -2,12 +2,10 @@
 
 use App\Http\Middleware\LogApiRequests;
 
-Route::get('/', 'HomeController@index');
-Route::post('/url', 'HomeController@getVideoUrl')->middleware(LogApiRequests::class);
 
-Route::get('/api', 'HomeController@apiDocs');
 
-Route::get('/downloader.php', 'HomeController@legacy');
+
+Route::post('/url', 'DownloadController@getVideoUrl')->middleware(LogApiRequests::class);
 
 Route::group(['prefix' => 'stats'], function () {
     Route::get('/', 'StatsController@index');

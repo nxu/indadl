@@ -13,5 +13,6 @@ class CleanupApiLog extends Command
     public function handle(Logger $logger)
     {
         $logger->cleanup();
+        return 0;
     }
 }

@@ -47,5 +47,7 @@ class GenerateApiLogTestEntries extends Command
                 ]);
             }
         }
+
+        return 0;
     }
 }
