@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StatsController;
+
+Route::get('/', [HomeController::class, 'index']);
+Route::post('/', [HomeController::class, 'download']);
 
 Route::group(['prefix' => 'stats'], function () {
     Route::get('/', [StatsController::class, 'index']);

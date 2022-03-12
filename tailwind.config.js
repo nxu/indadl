@@ -11,5 +11,6 @@ module.exports = {
       serif: ['Zilla Slab', 'serif'],
     }
   },
+  darkMode: 'class',
   plugins: [],
 }
