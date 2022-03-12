@@ -1,15 +1,10 @@
 <?php
 
-use App\Http\Middleware\LogApiRequests;
-
-
-
-
-Route::post('/url', 'DownloadController@getVideoUrl')->middleware(LogApiRequests::class);
+use App\Http\Controllers\StatsController;
 
 Route::group(['prefix' => 'stats'], function () {
-    Route::get('/', 'StatsController@index');
-    Route::get('/24h', 'StatsController@last24h');
-    Route::get('/7d', 'StatsController@last7d');
-    Route::get('/14d', 'StatsController@last14d');
+    Route::get('/', [StatsController::class, 'index']);
+    Route::get('/24h', [StatsController::class, 'last24h']);
+    Route::get('/7d', [StatsController::class, 'last7d']);
+    Route::get('/14d', [StatsController::class, 'last14d']);
 });
