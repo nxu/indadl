@@ -4,24 +4,23 @@ namespace Tests\Feature;
 
 use App\IndavideoClient;
 use GuzzleHttp\Client;
+use InvalidArgumentException;
 use Tests\TestCase;
 
 class IndavideoClientTest extends TestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testItFailsOnInvalidUrl()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $client = new IndavideoClient(new Client());
         $client->getVideoUrl('nonsense');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testItFailsOnNonIndavideoUrl()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $client = new IndavideoClient(new Client());
         $client->getVideoUrl('https://www.google.com');
     }
