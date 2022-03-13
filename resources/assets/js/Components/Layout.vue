@@ -3,8 +3,9 @@
     <header class="block pt-9">
       <nav class="container mx-auto flex">
         <div class="hidden sm:flex space-x-12 font-bold leading-tight text-sm">
+          <Link href="/" class="text-indigo-400 hover:text-indigo-600">Indavideó letöltés</Link>
           <Link href="/api" class="text-indigo-400 hover:text-indigo-600">API</Link>
-          <Link href="/status" class="text-indigo-400 hover:text-indigo-600">Status</Link>
+          <a href="https://stats.uptimerobot.com/nYB1qC7YwQ/784058498" target="_blank" class="text-indigo-400 hover:text-indigo-600">Status</a>
           <a href="https://github.com/nxu/indadl" target="_blank" class="text-indigo-400 hover:text-indigo-600">GitHub</a>
         </div>
 

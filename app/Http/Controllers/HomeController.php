@@ -28,4 +28,9 @@ class HomeController extends Controller
             ], 400);
         }
     }
+
+    public function api()
+    {
+        return Inertia::render('Api');
+    }
 }

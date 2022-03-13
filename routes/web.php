@@ -5,6 +5,7 @@ use App\Http\Controllers\StatsController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::post('/', [HomeController::class, 'download']);
+Route::get('/api', [HomeController::class, 'api']);
 
 Route::group(['prefix' => 'stats'], function () {
     Route::get('/', [StatsController::class, 'index']);
