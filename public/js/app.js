@@ -21537,13 +21537,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Components/Card */ "./resources/assets/js/Components/Card.vue");
 /* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/Layout */ "./resources/assets/js/Components/Layout.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Card: _Components_Card__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Layout: _Components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Layout: _Components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"],
+    InertiaLink: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_3__.InertiaLink
   },
   props: {
     video: Object
@@ -21554,8 +21557,15 @@ __webpack_require__.r(__webpack_exports__);
         return !!props.video.resolutions[res];
       });
     });
+    var allResolutions = Object.keys(props.video.resolutions).filter(function (res) {
+      return !!props.video.resolutions[res];
+    });
+    var state = (0,vue__WEBPACK_IMPORTED_MODULE_2__.reactive)({
+      selectedResolution: allResolutions[allResolutions.length - 1]
+    });
     return {
-      resolutions: resolutions
+      resolutions: resolutions,
+      state: state
     };
   }
 });
@@ -21841,9 +21851,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Fe ");
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 448 512",
+  "class": "w-4 fill-current"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  d: "M229.9 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L94.569 282H436c6.627 0 12-5.373 12-12v-28c0-6.627-5.373-12-12-12H94.569l155.13-155.13c4.686-4.686 4.686-12.284 0-16.971L229.9 38.101c-4.686-4.686-12.284-4.686-16.971 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971L212.929 473.9c4.686 4.686 12.284 4.686 16.971-.001z"
+})], -1
+/* HOISTED */
+);
 
+var _hoisted_2 = {
+  "class": "flex justify-center mx-auto text-sm"
+};
+var _hoisted_3 = ["disabled", "onClick"];
+var _hoisted_4 = {
+  "class": "mt-12 text-center"
+};
+var _hoisted_5 = ["href"];
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+  "class": "my-6"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_7 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_InertiaLink = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("InertiaLink");
+
   var _component_Card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Card");
 
   var _component_Layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Layout");
@@ -21851,10 +21887,45 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Layout, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
-        "class": "mt-32"
+        "class": "mt-8 sm:mt-32 relative"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_1];
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InertiaLink, {
+            href: "/",
+            "class": "absolute top-3 left-7 flex text-gray-500 hover:text-gray-700"
+          }, {
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [_hoisted_1];
+            }),
+            _: 1
+            /* STABLE */
+
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.resolutions, function (res) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+              "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("px-4 py-1 ".concat(res == $setup.state.selectedResolution ? 'bg-indigo-400 pointer-events-none' : 'bg-indigo-600', "  hover:bg-indigo-700 active:bg-indigo-800 first-of-type:rounded-l-md last-of-type:rounded-r-md border-r border-r-indigo-800 last-of-type:border-r-0 text-white ")),
+              disabled: res == $setup.state.selectedResolution,
+              onClick: function onClick($event) {
+                return $setup.state.selectedResolution = res;
+              }
+            }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(res) + "p ", 11
+            /* TEXT, CLASS, PROPS */
+            , _hoisted_3);
+          }), 256
+          /* UNKEYED_FRAGMENT */
+          ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+            href: $props.video.resolutions[$setup.state.selectedResolution],
+            target: "_blank",
+            download: "",
+            "class": "bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 px-4 py-2 text-white rounded"
+          }, " Letöltés ", 8
+          /* PROPS */
+          , _hoisted_5), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", {
+            "class": "mx-auto max-w-full",
+            src: $props.video.resolutions[$setup.state.selectedResolution],
+            controls: ""
+          }, null, 8
+          /* PROPS */
+          , _hoisted_7)])];
         }),
         _: 1
         /* STABLE */
