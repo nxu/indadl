@@ -2,14 +2,14 @@
   <Layout :hide-footer="true">
     <div>
       <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-6 w-full sm:w-3/4 lg:w-1/2 2xl:w-1/3 px-4">
-        <h1 class="text-center mb-8 text-4xl font-bold font-serif">
+        <h1 class="text-center mb-8 text-4xl font-bold font-serif dark:text-gray-300">
           Indavideó letöltés
         </h1>
 
         <form class="bg-white shadow rounded-lg flex" @submit.prevent="submit">
           <input type="text"
                  name="url"
-                 class="rounded-l-lg pl-4 py-3 flex-grow"
+                 class="rounded-l-lg pl-4 py-3 flex-grow dark:bg-stone-900 dark:text-gray-300 dark:placeholder-gray-300"
                  placeholder="Indavideó link"
                  v-model="form.url"
                  autofocus

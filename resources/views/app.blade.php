@@ -18,7 +18,7 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
 </head>
-<body class="bg-gradient-to-bl from-white to-indigo-200 min-h-full">
+<body class="bg-gradient-to-bl from-white to-indigo-200 dark:from-[#1d1933] dark:to-[#12111f] min-h-full">
 @inertia
 </body>
 </html>

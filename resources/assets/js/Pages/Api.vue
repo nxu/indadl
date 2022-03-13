@@ -1,13 +1,13 @@
 <template>
   <Layout>
     <div class="mt-8 sm:mt-32">
-      <h1 class="text-center mb-8 text-4xl font-bold font-serif">
+      <h1 class="text-center mb-8 text-4xl font-bold font-serif dark:text-gray-300">
         Indavideó letöltés API
       </h1>
 
       <Card>
         <h2 class="text-xl font-bold font-serif mb-2">Request</h2>
-<pre class="bg-gray-200 p-3 rounded mb-4"><span class="font-bold">POST</span> https://indavideo.nxu.hu/url
+<pre class="bg-gray-200 dark:bg-indigo-900 dark:text-gray-300 p-3 rounded mb-4"><span class="font-bold">POST</span> https://indavideo.nxu.hu/url
 Content-Type: application/json
 
 {
@@ -16,7 +16,7 @@ Content-Type: application/json
 </pre>
 
         <h2 class="text-xl font-bold font-serif mb-2">Response</h2>
-<pre class="bg-gray-200 p-3 rounded mb-4"><span class="font-bold">200 OK</span>
+<pre class="bg-gray-200 dark:bg-indigo-900 dark:text-gray-300 p-3 rounded mb-4"><span class="font-bold">200 OK</span>
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 
         <h2 class="text-xl font-bold font-serif mb-2">Hiba</h2>
 
-<pre class="bg-gray-200 p-3 rounded mb-6"><span class="font-bold">400 Bad Request</span>
+<pre class="bg-gray-200 dark:bg-indigo-900 dark:text-gray-300 p-3 rounded mb-6"><span class="font-bold">400 Bad Request</span>
 Content-Type: application/json
 
 {
