@@ -4,24 +4,24 @@ namespace App\Http\Controllers;
 
 use App\IndavideoClient;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('app');
+        return Inertia::render('Index');
     }
 
-    public function getVideoUrl(Request $request, IndavideoClient $indavideoClient)
+    public function download(Request $request, IndavideoClient $indavideoClient)
     {
-        $this->validate($request, [
-            'url' => 'required'
-        ]);
+        $request->validate(['url' => 'required']);
 
         $url = $request->get('url');
 
         try {
-            return response()->json($indavideoClient->getVideoUrl($url));
+            $video = $indavideoClient->getVideoUrl($url);
+            return Inertia::render('Video', compact('video'));
         } catch (\InvalidArgumentException $ex) {
             return response()->json([
                 'error' => $ex->getMessage()
@@ -29,13 +29,8 @@ class HomeController extends Controller
         }
     }
 
-    public function apiDocs()
+    public function api()
     {
-        return view('api');
-    }
-
-    public function legacy()
-    {
-        return response('New API: https://indavideo.nxu.hu/api', 400);
+        return Inertia::render('Api');
     }
 }

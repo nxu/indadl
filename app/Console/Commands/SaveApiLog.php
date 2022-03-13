@@ -13,5 +13,7 @@ class SaveApiLog extends Command
     public function handle(Logger $logger)
     {
         $logger->persist();
+
+        return 0;
     }
 }

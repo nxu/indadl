@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 
 class AmfResponseParser
@@ -20,7 +21,7 @@ class AmfResponseParser
         $urls = collect($rawUrls)->map(function ($url, $resolution) use ($tokens) {
             $token = Arr::get($tokens, $resolution);
 
-            if (str_contains($url, '?')) {
+            if (Str::contains($url, '?')) {
                 return "$url&token=$token";
             }
 

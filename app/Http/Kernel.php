@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\TrustProxies;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Session\Middleware\StartSession;
 
 class Kernel extends HttpKernel
 {
@@ -29,11 +30,10 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+            \App\Http\Middleware\HandleInertiaRequests::class,
         ],
 
         'api' => [
-            'throttle:60,1',
-            'bindings',
         ],
     ];
 
