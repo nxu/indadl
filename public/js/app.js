@@ -21694,7 +21694,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "ml-2"
+  "class": "hidden sm:block ml-2"
 }, "Világos mód", -1
 /* HOISTED */
 );
@@ -21710,7 +21710,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "ml-2"
+  "class": "hidden sm:block ml-2"
 }, "Sötét mód", -1
 /* HOISTED */
 );
@@ -21826,10 +21826,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "block pt-9"
+  "class": "block pt-4 px-4 sm:pt-9 sm:px-0"
 };
 var _hoisted_2 = {
-  "class": "container mx-auto flex"
+  "class": "container mx-auto flex items-center"
 };
 var _hoisted_3 = {
   "class": "hidden sm:flex space-x-12 font-bold leading-tight text-sm"
