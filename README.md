@@ -1,3 +1,8 @@
+**A letöltő jelenleg nem működik. Részletek itt: https://github.com/nxu/indadl/issues/56**
+
+----
+
+
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
 
 [![Actions Status](https://github.com/nXu/indadl/workflows/URL%20Download%20tests/badge.svg)](https://github.com/nXu/indadl/actions)
