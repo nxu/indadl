@@ -3,23 +3,17 @@
     <div>
       <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-6 w-full sm:w-3/4 lg:w-1/2 2xl:w-1/3 px-4">
         <h1 class="text-center mb-8 text-4xl font-bold font-serif dark:text-gray-300">
-          Indavideó letöltés
+          😔
         </h1>
 
-        <form class="bg-white shadow rounded-lg flex" @submit.prevent="submit">
-          <input type="text"
-                 name="url"
-                 class="rounded-l-lg pl-4 py-3 flex-grow dark:bg-stone-900 dark:text-gray-300 dark:placeholder-gray-300"
-                 placeholder="Indavideó link"
-                 v-model="form.url"
-                 autofocus
-                 required
-          >
-
-          <button type="submit" class="rounded-r-lg px-4 py-3 bg-indigo-500 text-white hover:bg-indigo-600 active:bg-indigo-700">
-            Letöltés
-          </button>
-        </form>
+        <div class="bg-white dark:bg-gray-800 dark:text-gray-100 shadow rounded-lg p-8 border border-gray-50 dark:border-none" @submit.prevent="submit">
+          <p>
+            A letöltő jelenleg sajnos nem működik.
+            <br>
+            A részleteket lásd itt:
+            <a class="underline" href="https://github.com/nxu/indadl/issues/56">https://github.com/nxu/indadl/issues/56</a>
+          </p>
+        </div>
       </div>
 
       <Footer class="absolute bottom-5 w-full"></Footer>
