@@ -1,11 +1,15 @@
-**A letöltő jelenleg nem működik. Részletek itt: https://github.com/nxu/indadl/issues/56**
+>## A letöltő karbantartása részemről sajnos végleg megszűnt. Részletek itt: https://github.com/nxu/indadl/issues/56
+>
+>Forkoljatok nyugodtan, hajrá srácok!
+>
+> *Viszlát, és kösz a halakat! 🐟*
+>
+> *nxu*
+----
 
 ----
 
-
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
-
-[![Actions Status](https://github.com/nXu/indadl/workflows/URL%20Download%20tests/badge.svg)](https://github.com/nXu/indadl/actions)
+----
 
 
 indadl
